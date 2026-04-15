@@ -4,7 +4,7 @@ const os = require('os');
 const RammerheadJSMemCache = require('./classes/RammerheadJSMemCache.js');
 const RammerheadJSFileCache = require('./classes/RammerheadJSFileCache.js');
 
-const enableWorkers = os.cpus().length !== 1;
+const enableWorkers = false;
 
 module.exports = {
     //// HOSTING CONFIGURATION ////
@@ -15,8 +15,8 @@ module.exports = {
     publicDir: path.join(__dirname, '../public'), // set to null to disable
 
     // enable or disable multithreading
-    enableWorkers,
-    workers: os.cpus().length,
+    enableWorkers: false,
+    workers: 1,
 
     // ssl object is either null or { key: fs.readFileSync('path/to/key'), cert: fs.readFileSync('path/to/cert') }
     // for more info, see https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
